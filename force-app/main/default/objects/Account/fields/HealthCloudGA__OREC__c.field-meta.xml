@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HealthCloudGA__OREC__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Original Reason for Medicare Entitlement</description>
+    <externalId>false</externalId>
+    <label>OREC</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Age</fullName>
+                <default>false</default>
+                <label>Age</label>
+            </value>
+            <value>
+                <fullName>Disabled</fullName>
+                <default>false</default>
+                <label>Disabled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

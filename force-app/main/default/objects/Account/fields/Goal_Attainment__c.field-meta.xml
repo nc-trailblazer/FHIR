@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Goal_Attainment__c</fullName>
+    <description>Measure of YTD Revenue vs. Goal</description>
+    <externalId>false</externalId>
+    <formula>YTD_Revenue_Generated__c  /  Current_Year_Revenue_Goal__c</formula>
+    <label>% Goal Attainment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

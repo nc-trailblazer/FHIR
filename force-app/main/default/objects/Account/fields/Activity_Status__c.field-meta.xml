@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( TEXT(Call_Frequency__c), &quot;weekly&quot;, 
+   IF(Days_since_last_activity__c &gt; 7 &amp;&amp; Days_since_last_activity__c &lt; 14, &quot;yellow&quot;, 
+   IF(Days_since_last_activity__c &gt;= 14, &quot;red&quot;,
+   &quot;green&quot;
+   )
+   )
+,
+&quot;bi-weekly&quot;,
+  IF(Days_since_last_activity__c &gt; 14 &amp;&amp; Days_since_last_activity__c &lt; 21, &quot;yellow&quot;, 
+   IF(Days_since_last_activity__c &gt;= 21, &quot;red&quot;,
+   &quot;green&quot;
+   )
+   )
+,
+&quot;monthly&quot;,
+ IF(Days_since_last_activity__c &gt; 30 &amp;&amp; Days_since_last_activity__c &lt; 45, &quot;yellow&quot;, 
+   IF(Days_since_last_activity__c &gt;=45, &quot;red&quot;,
+   &quot;green&quot;
+   )
+   )
+,
+&quot;N/A&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Activity Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

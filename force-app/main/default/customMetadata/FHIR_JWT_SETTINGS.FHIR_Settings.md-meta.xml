@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>FHIR Settings</label>
+    <protected>false</protected>
+    <values>
+        <field>AUD__c</field>
+        <value xsi:type="xsd:string">https://fhir.epic.com/interconnect-fhir-oauth/oauth2/token</value>
+    </values>
+    <values>
+        <field>Cert_Name__c</field>
+        <value xsi:type="xsd:string">fhirdemo_cert</value>
+    </values>
+    <values>
+        <field>ISS__c</field>
+        <value xsi:type="xsd:string">491d80fb-b3d6-4df0-ba11-d0b8fc03f2de</value>
+    </values>
+    <values>
+        <field>JTI__c</field>
+        <value xsi:type="xsd:string">derekfhir2</value>
+    </values>
+    <values>
+        <field>SUB__c</field>
+        <value xsi:type="xsd:string">491d80fb-b3d6-4df0-ba11-d0b8fc03f2de</value>
+    </values>
+</CustomMetadata>

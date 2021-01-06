@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Book_of_Business_Lifetime__c</fullName>
+    <externalId>false</externalId>
+    <label>Book of Business Lifetime</label>
+    <summarizedField>Policy__c.Premium__c</summarizedField>
+    <summaryForeignKey>Policy__c.Producer__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

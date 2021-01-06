@@ -1,0 +1,5 @@
+<aura:component controller="FHIRdemoController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<!--  <aura:handler event="force:refreshView" action="{!c.isRefreshed}" />  -->
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:button variant="Brand" class="slds-button" label="FHIR Sync" onclick="{!c.handleClick}"/>
+</aura:component>

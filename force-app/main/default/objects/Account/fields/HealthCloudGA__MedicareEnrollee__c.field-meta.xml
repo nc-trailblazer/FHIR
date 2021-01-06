@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HealthCloudGA__MedicareEnrollee__c</fullName>
+    <deprecated>false</deprecated>
+    <description>New member or continued from previous year.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>New member or continued from previous year.</inlineHelpText>
+    <label>Medicare Enrollee</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Enrollee</fullName>
+                <default>false</default>
+                <label>New Enrollee</label>
+            </value>
+            <value>
+                <fullName>Continued</fullName>
+                <default>false</default>
+                <label>Continued</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

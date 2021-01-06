@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>rrpu__Alert_Message__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is installed by Riptide Pop-up Alerts and is used in conjunction with the Pop-up Alert S-Control.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If you enter text into this field the text will be displayed in a pop-up message whenever someone views this record.</inlineHelpText>
+    <label>Alert Message</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

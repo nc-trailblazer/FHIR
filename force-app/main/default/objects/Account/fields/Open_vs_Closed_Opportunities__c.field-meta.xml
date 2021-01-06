@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_vs_Closed_Opportunities__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(&apos;http://chart.apis.google.com/chart?cht=p3&amp;chs=300x100&amp;chd=t:&apos;+ 
+TEXT( Open_Opptys__c ) + &apos;,&apos; + TEXT(Closed_Lost_Opptys__c + Closed_Won_Opptys__c) + 
+&apos;&amp;chl=Open (&apos; + TEXT(Open_Opptys__c)+&apos;)|Closed (&apos;+TEXT( Closed_Lost_Opptys__c + Closed_Won_Opptys__c )+&apos;)&amp;chf=bg,s,FFFFFF&apos; 
+
+
+
+
+
+
+
+, &apos;no data available&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Open vs. Closed Opportunities</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Provider_Contact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Member_ID__c</fields>
+    <fields>Birthdate</fields>
+    <fields>Phone</fields>
+    <fields>Email</fields>
+    <fields>YTD_Spend__c</fields>
+    <fields>Benefits_Usage__c</fields>
+    <fields>Plan_Type__c</fields>
+    <fields>HealthCloudGA__Age__c</fields>
+    <fields>Risk_Indicator__c</fields>
+    <label>Provider Contact Layout</label>
+</CompactLayout>

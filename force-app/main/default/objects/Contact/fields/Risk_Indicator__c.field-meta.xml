@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Risk_Indicator__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(&quot;https://df17providerpayerbuild8675309.my.salesforce.com/resource/1507837058000/dcRiskIndicator?isdtp=p1&quot;, &quot;YTD Spend&quot;, 40, 40)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Risk Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

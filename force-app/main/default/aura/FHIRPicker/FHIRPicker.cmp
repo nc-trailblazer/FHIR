@@ -1,0 +1,176 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="selectedTypes" type="string" access="public" />
+        <fieldset class="slds-form-element">
+        <legend class="slds-form-element__legend slds-form-element__label"></legend>
+        <div class="slds-form-element__control">
+            <!-- Patient Information -->
+            <div class="slds-visual-picker slds-visual-picker_small">
+                <input aura:id="patientInformation" type="checkbox" id="visual-picker-85" name="options" value="patientInfo" onclick="{! c.handleOnClick }" />
+                <label for="visual-picker-85">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span class="slds-is-selected">
+            			  <span class="slds-icon_container">
+                				<lightning:icon iconName="action:check" size="large" alternativeText="Patient Information"/>
+            			  </span>
+          				</span>
+                        <span class="slds-is-not-selected">
+            			  <span class="slds-icon_container">
+              				<lightning:icon iconName="standard:people" size="large" alternativeText="Patient Information"/>
+            			  </span>
+          				</span>
+        			</span>
+                    <span class="slds-visual-picker__body">
+                        <span class="slds-text-heading_small">Patient Information</span>
+                    </span>
+                </label>
+            </div>
+            <!-- Conditions -->
+            <div class="slds-visual-picker slds-visual-picker_small">
+                <input aura:id="conditions" type="checkbox" id="visual-picker-86" name="options" value="conditions" onclick="{! c.handleOnClick }" />
+                <label for="visual-picker-86">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span class="slds-is-selected">
+            			  <span class="slds-icon_container">
+                				<lightning:icon iconName="action:check" size="large" alternativeText="Conditions"/>
+            			  </span>
+          				</span>
+                        <span class="slds-is-not-selected">
+            			  <span class="slds-icon_container">
+              				<lightning:icon iconName="standard:skill_entity" size="large" alternativeText="Conditions"/>
+            			  </span>
+          				</span>
+        			</span>
+                    <span class="slds-visual-picker__body">
+                        <span class="slds-text-heading_small">Conditions</span>
+                    </span>
+                </label>
+            </div>
+             <!-- Encounter -->
+             <div class="slds-visual-picker slds-visual-picker_small">
+                <input aura:id="encounter" type="checkbox" id="visual-picker-92" name="options" value="encounter" onclick="{! c.handleOnClick }" />
+                <label for="visual-picker-92">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span class="slds-is-selected">
+            			  <span class="slds-icon_container">
+                				<lightning:icon iconName="action:check" size="large" alternativeText="Encounters"/>
+            			  </span>
+          				</span>
+                        <span class="slds-is-not-selected">
+            			  <span class="slds-icon_container">
+              				<lightning:icon iconName="standard:skill_entity" size="large" alternativeText="Encounters"/>
+            			  </span>
+          				</span>
+        			</span>
+                    <span class="slds-visual-picker__body">
+                        <span class="slds-text-heading_small">Encounters</span>
+                    </span>
+                </label>
+            </div>
+            <!-- Care Plan -->
+            <div class="slds-visual-picker slds-visual-picker_small">
+                <input aura:id="carePlanInfo" type="checkbox" id="visual-picker-87" name="options" value="carePlan" onclick="{! c.handleOnClick }" />
+                <label for="visual-picker-87">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span class="slds-is-selected">
+            			  <span class="slds-icon_container">
+                				<lightning:icon iconName="action:check" size="large" alternativeText="Care Plan Information"/>
+            			  </span>
+          				</span>
+                        <span class="slds-is-not-selected">
+            			  <span class="slds-icon_container">
+              				<lightning:icon iconName="standard:task" size="large" alternativeText="Care Plan Information"/>
+            			  </span>
+          				</span>
+        			</span>
+                    <span class="slds-visual-picker__body">
+                        <span class="slds-text-heading_small">Care Plan Information</span>
+                    </span>
+                </label>
+            </div>
+            <!-- Medication Statement-->
+            <div class="slds-visual-picker slds-visual-picker_small">
+                <input aura:id="medication statement" type="checkbox" id="visual-picker-88" name="options" value="medicationStatement" onclick="{! c.handleOnClick }" />
+                <label for="visual-picker-88">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span class="slds-is-selected">
+            			  <span class="slds-icon_container">
+                				<lightning:icon iconName="action:check" size="large" alternativeText="Medication Statement"/>
+            			  </span>
+          				</span>
+                        <span class="slds-is-not-selected">
+            			  <span class="slds-icon_container">
+              				<lightning:icon iconName="standard:feed" size="large" alternativeText="Medication Statement"/>
+            			  </span>
+          				</span>
+        			</span>
+                    <span class="slds-visual-picker__body">
+                        <span class="slds-text-heading_small">Medication Statement</span>
+                    </span>
+                </label>
+            </div>
+            <!-- Appointments -->
+            <div class="slds-visual-picker slds-visual-picker_small">
+                <input aura:id="appointments" type="checkbox" id="visual-picker-89" name="options" value="appointments" onclick="{! c.handleOnClick }" />
+                <label for="visual-picker-89">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span class="slds-is-selected">
+            			  <span class="slds-icon_container">
+                				<lightning:icon iconName="action:check" size="large" alternativeText="appointments"/>
+            			  </span>
+          				</span>
+                        <span class="slds-is-not-selected">
+            			  <span class="slds-icon_container">
+              				<lightning:icon iconName="standard:date_time" size="large" alternativeText="appointments"/>
+            			  </span>
+          				</span>
+        			</span>
+                    <span class="slds-visual-picker__body">
+                        <span class="slds-text-heading_small">Appointments</span>
+                    </span>
+                </label>
+            </div>
+            <!-- Smoking -->
+            <div class="slds-visual-picker slds-visual-picker_small">
+                <input aura:id="Smoking History" type="checkbox" id="visual-picker-90" name="options" value="smoking" onclick="{! c.handleOnClick }" />
+                <label for="visual-picker-90">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span class="slds-is-selected">
+            			  <span class="slds-icon_container">
+                				<lightning:icon iconName="action:check" size="large" alternativeText="smoking"/>
+            			  </span>
+          				</span>
+                        <span class="slds-is-not-selected">
+            			  <span class="slds-icon_container">
+              				<lightning:icon iconName="standard:social" size="large" alternativeText="smoking"/>
+            			  </span>
+          				</span>
+        			</span>
+                    <span class="slds-visual-picker__body">
+                        <span class="slds-text-heading_small">Social History - Smoking</span>
+                    </span>
+                </label>
+            </div>
+            <!-- Labs -->
+            <div class="slds-visual-picker slds-visual-picker_small">
+                <input aura:id="Labs" type="checkbox" id="visual-picker-91" name="options" value="labs" onclick="{! c.handleOnClick }" />
+                <label for="visual-picker-91">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span class="slds-is-selected">
+            			  <span class="slds-icon_container">
+                				<lightning:icon iconName="action:check" size="large" alternativeText="labs"/>
+            			  </span>
+          				</span>
+                        <span class="slds-is-not-selected">
+            			  <span class="slds-icon_container">
+              				<lightning:icon iconName="standard:social" size="large" alternativeText="labs"/>
+            			  </span>
+          				</span>
+        			</span>
+                    <span class="slds-visual-picker__body">
+                        <span class="slds-text-heading_small">Social History - Labs</span>
+                    </span>
+                </label>
+            </div>
+           </div>
+    </fieldset>
+</aura:component>

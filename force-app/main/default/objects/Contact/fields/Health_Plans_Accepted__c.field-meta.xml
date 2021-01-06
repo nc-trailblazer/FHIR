@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Health_Plans_Accepted__c</fullName>
+    <externalId>false</externalId>
+    <label>Health Plans Accepted</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cigna</fullName>
+                <default>false</default>
+                <label>Cigna</label>
+            </value>
+            <value>
+                <fullName>Assurant</fullName>
+                <default>false</default>
+                <label>Assurant</label>
+            </value>
+            <value>
+                <fullName>Blue Cross/Blue Shield</fullName>
+                <default>false</default>
+                <label>Blue Cross/Blue Shield</label>
+            </value>
+            <value>
+                <fullName>Medicaid/Medicare</fullName>
+                <default>false</default>
+                <label>Medicaid/Medicare</label>
+            </value>
+            <value>
+                <fullName>Aetna</fullName>
+                <default>false</default>
+                <label>Aetna</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

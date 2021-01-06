@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>HealthCloudGA__ReferrerScore__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Integer value between 0 and 100, representing the conversion percentage (Field 2/Field 1 * 100). Rounded to the nearest whole number</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND( 
+AND( 
+NOT(ISNULL(HealthCloudGA__TotalReferrals__c)), 
+NOT(ISNULL(HealthCloudGA__ConvertedReferrals__c)) 
+),HealthCloudGA__TotalReferrals__c!=0), 
+ROUND((HealthCloudGA__ConvertedReferrals__c * 100.0) / HealthCloudGA__TotalReferrals__c,0),null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Referrer Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

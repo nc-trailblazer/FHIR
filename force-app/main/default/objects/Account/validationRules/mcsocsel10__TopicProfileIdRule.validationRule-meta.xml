@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>mcsocsel10__TopicProfileIdRule</fullName>
+    <active>true</active>
+    <description>Ensure valid format of Topic Profile ID</description>
+    <errorConditionFormula>NOT(REGEX(mcsocsel10__Topic_Profile_Id__c, &quot;\\d*&quot;))</errorConditionFormula>
+    <errorDisplayField>mcsocsel10__Topic_Profile_Id__c</errorDisplayField>
+    <errorMessage>Topic Profile Id expected to a positive number</errorMessage>
+</ValidationRule>

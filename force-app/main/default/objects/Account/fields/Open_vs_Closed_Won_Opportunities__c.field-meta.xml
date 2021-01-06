@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_vs_Closed_Won_Opportunities__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(&apos;http://chart.apis.google.com/chart?chxt=x,y&amp;chxl=1:|Open|Closed Won|0:|0|50000|&apos;+ TEXT(1.5 * MAX( Closed_Won_Value__c , Open_Oppty_Value__c )) +&apos;&amp;cht=bhs&amp;chd=t:&apos;+TEXT( Open_Oppty_Value__c )+&apos;,&apos;+TEXT( Closed_Won_Value__c )+&apos;&amp;chds=0,&apos;+ TEXT(1.5 * MAX( Closed_Won_Value__c , Open_Oppty_Value__c )) +&apos;&amp;chco=236FBD&amp;chls=2.0&amp;chs=300x125&amp;chtt=Opportunity Value ($USD)&apos; 
+
+
+, &apos;no data available&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Open vs. Closed Won Opportunities</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

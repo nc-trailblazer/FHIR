@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Per_State_Rule__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>State Name to get State Expense Rules for Physician Expense reporting</description>
+    <externalId>false</externalId>
+    <label>Per State Rule</label>
+    <referenceTo>State_Expense_Rule__c</referenceTo>
+    <relationshipLabel>Physicians</relationshipLabel>
+    <relationshipName>Medical_Professionals</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

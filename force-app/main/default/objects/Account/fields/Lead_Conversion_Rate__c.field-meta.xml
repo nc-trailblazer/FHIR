@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Conversion_Rate__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( AND(NULLVALUE(Number_Leads_Converted__c, 0)&lt;&gt;0, NULLVALUE(Number_Leads_Total__c, 0)&lt;&gt;0), Number_Leads_Converted__c / Number_Leads_Total__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lead Conversion Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

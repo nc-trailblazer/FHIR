@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Dwelling_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Dwelling Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Detached</fullName>
+                <default>false</default>
+                <label>Detached</label>
+            </value>
+            <value>
+                <fullName>Semi</fullName>
+                <default>false</default>
+                <label>Semi</label>
+            </value>
+            <value>
+                <fullName>Condo/Apt</fullName>
+                <default>false</default>
+                <label>Condo/Apt</label>
+            </value>
+            <value>
+                <fullName>Town</fullName>
+                <default>false</default>
+                <label>Town</label>
+            </value>
+            <value>
+                <fullName>Shelter</fullName>
+                <default>false</default>
+                <label>Shelter</label>
+            </value>
+            <value>
+                <fullName>Facility</fullName>
+                <default>false</default>
+                <label>Facility</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

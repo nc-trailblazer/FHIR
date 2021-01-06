@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Satisfaction_Index__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What does this customer think of us?</inlineHelpText>
+    <label>Customer Satisfaction Index</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A - Extremely Satisfied - Customer Evangelist</fullName>
+                <default>false</default>
+                <label>A - Extremely Satisfied - Customer Evangelist</label>
+            </value>
+            <value>
+                <fullName>B - Satisfied</fullName>
+                <default>false</default>
+                <label>B - Satisfied</label>
+            </value>
+            <value>
+                <fullName>C - Neutral</fullName>
+                <default>false</default>
+                <label>C - Neutral</label>
+            </value>
+            <value>
+                <fullName>D - Dissatisfied - At risk of losing business</fullName>
+                <default>false</default>
+                <label>D - Dissatisfied - At risk of losing business</label>
+            </value>
+            <value>
+                <fullName>F - Unsatisfactory - Losing Business</fullName>
+                <default>false</default>
+                <label>F - Unsatisfactory - Losing Business</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

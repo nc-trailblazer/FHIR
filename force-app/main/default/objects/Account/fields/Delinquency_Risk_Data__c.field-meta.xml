@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delinquency_Risk_Data__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(DandbCompany.MarketingPreScreen, &quot;L&quot;), &quot;Low Risk of Delinquency&quot;, 
+IF(ISPICKVAL(DandbCompany.MarketingPreScreen, &quot;M&quot;), &quot;Medium Risk of Delinquency&quot;, 
+IF(ISPICKVAL(DandbCompany.MarketingPreScreen, &quot;H&quot;), &quot;High Risk of Delinquency&quot;,&quot;&quot;)))</formula>
+    <label>Delinquency Risk</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
