@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+
 public with sharing class FHIRdemoControllerFinal {
 
     public static String DEFAULT_ISS = '491d80fb-b3d6-4df0-ba11-d0b8fc03f2de';
