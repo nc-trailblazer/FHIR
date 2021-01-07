@@ -2,6 +2,17 @@
 
 This is a working demo that leverages the fhir.epic.com API sandbox to demonstrate how easy it is to pull EPIC data into Health Cloud.
 
+## Demo Information
+
+The assets and cose in this demo have been tailored for use with the fhir,epic.com sandbox.  
+
+Users to use for testing
+
+Derrick Lin
+Camila Lopez
+
+The JSON parsing in the code is not production ready.  i have used what will be returned from the API in some cases to shorten the code.
+
 ## Installation Instructions
 
 1. Install ShowToast from Unofficial SF ( https://unofficialsf.com/show-toast-flow-action/)
@@ -41,7 +52,7 @@ The above creates a certificate and them a keystore.  You will need the public k
 ![ClientID Image](/images/clientID.png)
 
 12. Deploy this source to your ORG (You can use this button)
-<a href="https://githubsfdeploy.herokuapp.com">
+<a href="https://githubsfdeploy.herokuapp.com?owner=ns-trailblazer&repo=FHIR&ref=master">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
