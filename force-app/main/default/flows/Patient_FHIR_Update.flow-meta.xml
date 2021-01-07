@@ -3,13 +3,19 @@
     <actionCalls>
         <name>Get_Care_Plan</name>
         <label>Get Care Plan</label>
-        <locationX>1199</locationX>
-        <locationY>715</locationY>
+        <locationX>1833</locationX>
+        <locationY>494</locationY>
         <actionName>FHIRcareplanSTU3</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>Care_Plan_Done</targetReference>
         </connector>
+        <inputParameters>
+            <name>ownerId</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
         <inputParameters>
             <name>patientFHIRId</name>
             <value>
@@ -20,6 +26,12 @@
             <name>patientRecordId</name>
             <value>
                 <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordTypeId</name>
+            <value>
+                <elementReference>varCarePlanRecordTypeId</elementReference>
             </value>
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -302,8 +314,8 @@
     <actionCalls>
         <name>showToastCarePlan</name>
         <label>showToastCarePlan</label>
-        <locationX>1237</locationX>
-        <locationY>1042</locationY>
+        <locationX>1779</locationX>
+        <locationY>809</locationY>
         <actionName>c:showToast</actionName>
         <actionType>component</actionType>
         <connector>
@@ -318,7 +330,7 @@
         <inputParameters>
             <name>message</name>
             <value>
-                <stringValue>Successfully pulled care plant data from Epic</stringValue>
+                <stringValue>Successfully pulled care plan data from Epic</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -542,8 +554,8 @@
     <assignments>
         <name>Care_Plan_Done</name>
         <label>Care Plan Done</label>
-        <locationX>1242</locationX>
-        <locationY>889</locationY>
+        <locationX>1808</locationX>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>CarePlanComplete</assignToReference>
             <operator>Assign</operator>
@@ -816,7 +828,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Care_Plan</targetReference>
+                <targetReference>Get_Care_Plan_Record_Type_Id</targetReference>
             </connector>
             <label>Care Plan</label>
         </rules>
@@ -963,6 +975,29 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Care_Plan_Record_Type_Id</name>
+        <label>Get Care Plan Record Type Id</label>
+        <locationX>1595</locationX>
+        <locationY>482</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Care_Plan</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CarePlan</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>varCarePlanRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
     <recordLookups>
         <name>Get_Token</name>
         <label>Get Token</label>
@@ -1275,6 +1310,13 @@
         <name>TypeOfCall</name>
         <dataType>String</dataType>
         <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varCarePlanRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>

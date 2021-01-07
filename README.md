@@ -15,7 +15,7 @@ The JSON parsing in the code is not production ready.  i have used what will be 
 
 ## Installation Instructions
 
-1. Install ShowToast from Unofficial SF ( https://unofficialsf.com/show-toast-flow-action/)
+1. Install ShowToast from Unofficial SF ( https://unofficialsf.com/show-toast-flow-action/) and Navigate to Record ( https://unofficialsf.com/navigate-to-salesforce-record-view-or-edit-mode/ )
 
 2. Install Launch Flow in Modal ( https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FMYinUAH )
 

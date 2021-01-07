@@ -3,13 +3,19 @@
     <actionCalls>
         <name>Get_Care_Plan</name>
         <label>Get Care Plan</label>
-        <locationX>1287</locationX>
-        <locationY>715</locationY>
+        <locationX>1735</locationX>
+        <locationY>518</locationY>
         <actionName>FHIRcareplanSTU3</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>Care_Plan_Done</targetReference>
         </connector>
+        <inputParameters>
+            <name>ownerId</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
         <inputParameters>
             <name>patientFHIRId</name>
             <value>
@@ -20,6 +26,12 @@
             <name>patientRecordId</name>
             <value>
                 <elementReference>ExistingPatientRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordTypeId</name>
+            <value>
+                <elementReference>varCarePlanRecordTypeId</elementReference>
             </value>
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -279,7 +291,7 @@
         <inputParameters>
             <name>message</name>
             <value>
-                <stringValue>Successfully pulled care plant data from Epic</stringValue>
+                <stringValue>Successfully pulled care plan data from Epic</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -752,7 +764,7 @@ I am setting three VARs for portability.</description>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Care_Plan</targetReference>
+                <targetReference>Get_Care_Plan_Record_Type_ID</targetReference>
             </connector>
             <label>Care Plan</label>
         </rules>
@@ -886,6 +898,29 @@ I am setting three VARs for portability.</description>
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Care_Plan_Record_Type_ID</name>
+        <label>Get Care Plan Record Type ID</label>
+        <locationX>1582</locationX>
+        <locationY>453</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Care_Plan</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CarePlan</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>varCarePlanRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
     <recordLookups>
         <name>Get_Token</name>
         <label>Get Token</label>
@@ -1313,6 +1348,13 @@ I am setting three VARs for portability.</description>
         <name>TypeOfCall</name>
         <dataType>String</dataType>
         <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varCarePlanRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>

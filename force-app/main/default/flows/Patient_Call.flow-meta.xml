@@ -11,6 +11,12 @@
             <targetReference>Care_Plan_Done</targetReference>
         </connector>
         <inputParameters>
+            <name>ownerId</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>patientFHIRId</name>
             <value>
                 <elementReference>FHIRid</elementReference>
@@ -20,6 +26,12 @@
             <name>patientRecordId</name>
             <value>
                 <elementReference>NewPatientRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordTypeId</name>
+            <value>
+                <elementReference>varCarePlanRecordTypeId</elementReference>
             </value>
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -294,7 +306,7 @@
         <inputParameters>
             <name>message</name>
             <value>
-                <stringValue>Successfully pulled care plant data from Epic</stringValue>
+                <stringValue>Successfully pulled care plan data from Epic</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -654,8 +666,8 @@
     <decisions>
         <name>New_or_Existing</name>
         <label>New or Existing</label>
-        <locationX>242</locationX>
-        <locationY>1064</locationY>
+        <locationX>211</locationX>
+        <locationY>1071</locationY>
         <defaultConnector>
             <targetReference>CopyPatientId</targetReference>
         </defaultConnector>
@@ -671,7 +683,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_Patient</targetReference>
+                <targetReference>Get_Person_Account_Record_Type_ID</targetReference>
             </connector>
             <label>New Patient</label>
         </rules>
@@ -944,7 +956,7 @@
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>0124W000001PJjBQAW</stringValue>
+                <elementReference>varPersonAccountRecordTypeId</elementReference>
             </value>
         </inputAssignments>
         <object>Account</object>
@@ -976,6 +988,52 @@
         <object>Account</object>
         <outputAssignments>
             <assignToReference>ExistingPatientRecordId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Care_Plan_Record_Type_ID</name>
+        <label>Get Care Plan Record Type ID</label>
+        <locationX>544</locationX>
+        <locationY>1197</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Patient</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CarePlan</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>varCarePlanRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Person_Account_Record_Type_ID</name>
+        <label>Get Person Account Record Type ID</label>
+        <locationX>394</locationX>
+        <locationY>1180</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Care_Plan_Record_Type_ID</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Person Accounts</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>varPersonAccountRecordTypeId</assignToReference>
             <field>Id</field>
         </outputAssignments>
     </recordLookups>
@@ -1353,6 +1411,20 @@
         <name>TypeOfCall</name>
         <dataType>String</dataType>
         <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varCarePlanRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varPersonAccountRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>

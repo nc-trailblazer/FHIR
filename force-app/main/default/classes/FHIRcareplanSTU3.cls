@@ -56,9 +56,9 @@ global with sharing class FHIRcareplanSTU3 {
                             Case newCarePlan = new Case();
         
                             newCarePlan.Subject =  'FHIR Generated Care Plan';
-                            newCarePlan.recordTypeId = '0124W000001PJieQAG';
+                            newCarePlan.recordTypeId = request.recordTypeId;
                             newCarePlan.contactId = ContactListNew[0].Id;
-                            newCarePlan.ownerId = '0054W00000BKqxVQAT';
+                            newCarePlan.ownerId = request.ownerId;
                             newCarePlan.External_ID__c = root.get('id').getStringValue();
         
                             //insert newCarePlan;
@@ -133,6 +133,12 @@ global with sharing class FHIRcareplanSTU3 {
         
         @InvocableVariable(required=true)
         global String patientFHIRId;
+
+        @InvocableVariable(required=true)
+        global String ownerId;
+
+        @InvocableVariable(required=true)
+        global String recordTypeId;
     }
 
     global class FHIRapptSTU3ActionResult {
