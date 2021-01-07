@@ -19,7 +19,29 @@ This is a working demo that leverages the fhir.epic.com API sandbox to demonstra
 openssl req -new -x509 -key FHIRDEMO_PRIVATEKEY_v2.pem -out FHIRDEMO_PUBLICKEY_v2.pem -subj '/CN=CoolFHIRDemo' -days 365
 openssl pkcs12 -export -in FHIRDEMO_PUBLICKEY_v2.pem -inkey FHIRDEMO_PRIVATEKEY_v2.pem -out FHIRDEMO_KEYSTORE_v2.p12
 keytool -importkeystore -srckeystore FHIRDEMO_KEYSTORE_v2.p12 -srcstoretype pkcs12 -destkeystore FHIRDEMO_KEYSTORE_v2.jks -deststoretype JKS
-keytool -keystore FHIRDEMO_KEYSTORE_v2.jks -changealias -alias 1 -destalias FHIRDEMO_CERT_v2```
+keytool -keystore FHIRDEMO_KEYSTORE_v2.jks -changealias -alias 1 -destalias FHIRDEMO_CERT_v2
+```
+
+6. Note - Some of these command will ask you to create and or enter a password.  
+
+The above creates a certificate and them a keystore.  You will need the public key for the EPIC site and you will need the keystoore for your Org.  Note that changing the alias is what shows us in the org.  So in this case you will see a cert named fhirdemo_cert_v2 in your Org. 
+
+![Cert Image](/images/cert.png)
+
+7. Now you need to sign up over at fhir,epic.com (http://epic.com/) for a sandbox account.   
+
+8. Once you have your sand box account navigate to Build Apps. 
+
+9. Create an App and select Backend Systems, name it, add all the APIS and select the PUBLICKEY from the steps above. 
+![Build App](/images/createApp.png)
+
+10. Save the app, then agree to terms and save and make available for production. 
+
+11. Make sure you are in the new app or click into it snd you will now see the Client ID needed for the connection. (We use the Non-Production Client ID)
+![ClientID Image](/images/clientID.png)
+
+
+
 
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"
