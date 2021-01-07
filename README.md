@@ -1,22 +1,25 @@
-# Salesforce DX Project: Next Steps
+# Pull EPIC data into your ORG using FHIR APIs
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This is a working demo that leverages the fhir.epic.com API sandbox to demonstrate how easy it is to pull EPIC data into Health Cloud.
 
-## How Do You Plan to Deploy Your Changes?
+## Installation Instructions
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+1. Install ShowToast from Unofficial SF ( https://unofficialsf.com/show-toast-flow-action/)
 
-## Configure Your Salesforce DX Project
+2. Install Launch Flow in Modal ( https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FMYinUAH )
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+3. Navigate to Certificates and Key Management - Create a self signed cert.  You will use this in the next step so remember the name. 
 
-## Read All About It
+4. Navigate to Identity Providers (Need to do this or you will get an error when importing your cert)
+    1. Enable Identity Provider
+    ![Image: images/IDP.png](/images/IDP.png)
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
-
+5. Create a SSL Cert for use on the Epic FHIR Site as well as in your org
+```openssl genrsa -out FHIRDEMO_PRIVATEKEY_v2.pem 2048
+openssl req -new -x509 -key FHIRDEMO_PRIVATEKEY_v2.pem -out FHIRDEMO_PUBLICKEY_v2.pem -subj '/CN=CoolFHIRDemo' -days 365
+openssl pkcs12 -export -in FHIRDEMO_PUBLICKEY_v2.pem -inkey FHIRDEMO_PRIVATEKEY_v2.pem -out FHIRDEMO_KEYSTORE_v2.p12
+keytool -importkeystore -srckeystore FHIRDEMO_KEYSTORE_v2.p12 -srcstoretype pkcs12 -destkeystore FHIRDEMO_KEYSTORE_v2.jks -deststoretype JKS
+keytool -keystore FHIRDEMO_KEYSTORE_v2.jks -changealias -alias 1 -destalias FHIRDEMO_CERT_v2```
 
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"
