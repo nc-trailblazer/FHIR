@@ -16,6 +16,10 @@
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<types>
+		<members>FHIR_JWT_SETTINGS__mdt-FHIR_jwt_setting Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
 		<members>Account.Epic_Sync__c</members>
 		<members>Account.FHIRdata1__c</members>
 		<members>Account.FHIRdata2__c</members>
@@ -57,10 +61,6 @@
 		<members>Patient_Call</members>
 		<members>Patient_FHIR_Update</members>
 		<name>Flow</name>
-	</types>
-	<types>
-		<members>FHIR_JWT_SETTINGS__mdt-FHIR_jwt_setting Layout</members>
-		<name>Layout</name>
 	</types>
 	<types>
 		<members>Contact.Get_in_Touch_Contact_Center</members>
