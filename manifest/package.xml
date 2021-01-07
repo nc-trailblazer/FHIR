@@ -53,6 +53,7 @@
 		<members>Account</members>
 		<members>Contact</members>
 		<members>EPIC_Access__c</members>
+		<members>FHIR_JWT_SETTINGS__mdt</members>
 		<name>CustomObject</name>
 	</types>
 	<types>
