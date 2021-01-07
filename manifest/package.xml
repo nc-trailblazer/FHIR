@@ -71,6 +71,10 @@
 		<name>Flow</name>
 	</types>
 	<types>
+		<members>FHIR_JWT_SETTINGS__mdt-FHIR_jwt_setting Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
 		<members>Contact.Get_in_Touch_Contact_Center</members>
 		<name>QuickAction</name>
 	</types>
