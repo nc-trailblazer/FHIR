@@ -12,18 +12,6 @@
 		<name>ApexClass</name>
 	</types>
 	<types>
-		<members>*</members>
-		<name>ApexPage</name>
-	</types>
-	<types>
-		<members>*</members>
-		<name>ApexTestSuite</name>
-	</types>
-	<types>
-		<members>*</members>
-		<name>ApexTrigger</name>
-	</types>
-	<types>
 		<members>FHIRPicker</members>
 		<name>AuraDefinitionBundle</name>
 	</types>
@@ -69,6 +57,10 @@
 		<members>Patient_Call</members>
 		<members>Patient_FHIR_Update</members>
 		<name>Flow</name>
+	</types>
+	<types>
+		<members>FHIR_JWT_SETTINGS__mdt-FHIR_jwt_setting Layout</members>
+		<name>Layout</name>
 	</types>
 	<types>
 		<members>Contact.Get_in_Touch_Contact_Center</members>
