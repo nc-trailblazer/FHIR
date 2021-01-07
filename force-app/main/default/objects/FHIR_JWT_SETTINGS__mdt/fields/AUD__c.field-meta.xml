@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AUD__c</fullName>
+    <description>The FHIR authorization server&apos;s token endpoint URL. This is the same URL to which this authentication JWT will be posted. See below for an example POST.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The FHIR authorization server&apos;s token endpoint URL. This is the same URL to which this authentication JWT will be posted. See below for an example POST.</inlineHelpText>
+    <label>AUD</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SUB__c</fullName>
+    <description>The service&apos;s client_id, as determined during registration on the Epic on FHIR website.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The service&apos;s client_id, as determined during registration on the Epic on FHIR website.</inlineHelpText>
+    <label>SUB</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
