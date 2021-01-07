@@ -8,7 +8,6 @@
 		<members>FHIRencounterSTU3</members>
 		<members>FHIRmedstatementSTU3</members>
 		<members>FHIRsearchSTU3</members>
-		<members>FHIRsyncController</members>
 		<members>JSONParse</members>
 		<name>ApexClass</name>
 	</types>
