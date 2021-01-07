@@ -57,3 +57,6 @@ The above creates a certificate and them a keystore.  You will need the public k
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
 
+13. Make sure you see a “Deployment Complete”
+
+14. Open Setup→Custom Metadata Types
