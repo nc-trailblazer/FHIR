@@ -52,7 +52,7 @@ The above creates a certificate and them a keystore.  You will need the public k
 ![ClientID Image](/images/clientID.png)
 
 12. Deploy this source to your ORG (You can use this button)
-<a href="https://githubsfdeploy.herokuapp.com?owner=ns-trailblazer&repo=FHIR&ref=master">
+<a href="https://githubsfdeploy.herokuapp.com?owner=ns-trailblazer&repo=FHIR">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
