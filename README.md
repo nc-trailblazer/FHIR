@@ -40,10 +40,9 @@ The above creates a certificate and them a keystore.  You will need the public k
 11. Make sure you are in the new app or click into it snd you will now see the Client ID needed for the connection. (We use the Non-Production Client ID)
 ![ClientID Image](/images/clientID.png)
 
-
-
-
+12. Deploy this source to your ORG (You can use this button)
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
+
