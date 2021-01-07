@@ -13,6 +13,18 @@
 		<name>ApexClass</name>
 	</types>
 	<types>
+		<members>*</members>
+		<name>ApexPage</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>ApexTestSuite</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>ApexTrigger</name>
+	</types>
+	<types>
 		<members>Account.Epic_Sync__c</members>
 		<members>Account.FHIRdata1__c</members>
 		<members>Account.FHIRdata2__c</members>
@@ -44,6 +56,11 @@
 		<name>CustomTab</name>
 	</types>
 	<types>
+		<members>Patient_Engagement_Lightning_Home_Page</members>
+		<members>Patient_Engagement_Person_Pinned_Left</members>
+		<name>FlexiPage</name>
+	</types>
+	<types>
 		<members>FHIR_Demo_1</members>
 		<members>Patient_Call</members>
 		<members>Patient_FHIR_Update</members>
@@ -52,6 +69,10 @@
 	<types>
 		<members>Contact.Get_in_Touch_Contact_Center</members>
 		<name>QuickAction</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>StaticResource</name>
 	</types>
 	<version>49.0</version>
 </Package>
