@@ -106,6 +106,12 @@
             <targetReference>Appointments_Done</targetReference>
         </connector>
         <inputParameters>
+            <name>appointmentProviderId</name>
+            <value>
+                <elementReference>varProviderRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>patientRecordId</name>
             <value>
                 <elementReference>recordId</elementReference>
@@ -924,7 +930,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>GetAppointments</targetReference>
+                <targetReference>Get_Provider_Record_Id</targetReference>
             </connector>
             <label>Appointments</label>
         </rules>
@@ -995,6 +1001,29 @@
         <object>RecordType</object>
         <outputAssignments>
             <assignToReference>varCarePlanRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Provider_Record_Id</name>
+        <label>Get Provider Record Id</label>
+        <locationX>1653</locationX>
+        <locationY>657</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetAppointments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue> JFK Medical Center</stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>varProviderRecordId</assignToReference>
             <field>Id</field>
         </outputAssignments>
     </recordLookups>
@@ -1315,6 +1344,13 @@
     </variables>
     <variables>
         <name>varCarePlanRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varProviderRecordId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

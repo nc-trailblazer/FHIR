@@ -82,6 +82,12 @@
             <targetReference>Appointments_Done</targetReference>
         </connector>
         <inputParameters>
+            <name>appointmentProviderId</name>
+            <value>
+                <elementReference>varProviderRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>patientRecordId</name>
             <value>
                 <elementReference>PatientRecord</elementReference>
@@ -881,7 +887,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>GetAppointments</targetReference>
+                <targetReference>GetAppointmentProviderID</targetReference>
             </connector>
             <label>Appointments</label>
         </rules>
@@ -1062,6 +1068,30 @@
         <outputAssignments>
             <assignToReference>ExpiresWhen</assignToReference>
             <field>ExpiresWhen__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>This is where you can change what account the appointment is tied to for the demo.</description>
+        <name>GetAppointmentProviderID</name>
+        <label>GetAppointmentProviderID</label>
+        <locationX>1790</locationX>
+        <locationY>600</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetAppointments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue> JFK Medical Center</stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>varProviderRecordId</assignToReference>
+            <field>Id</field>
         </outputAssignments>
     </recordLookups>
     <recordUpdates>
@@ -1423,6 +1453,13 @@
     </variables>
     <variables>
         <name>varPersonAccountRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varProviderRecordId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

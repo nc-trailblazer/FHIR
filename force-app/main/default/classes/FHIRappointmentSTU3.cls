@@ -52,7 +52,7 @@ global with sharing class FHIRappointmentSTU3 {
                 
                 String ApptName = root.get('entry').get('[0].resource').get('serviceType').get('[0].coding').get('[0].display').getStringValue();
                 String ApptDateTime = root.get('entry').get('[0].resource').get('start').getStringValue();
-                String ApptProvider = '0034W00002DysYyQAJ';
+                String ApptProvider = request.appointmentProviderId;
                 String ApptStatus = 'Scheduled';
 
                 Appointment__c	newAppt = new Appointment__c();
@@ -94,6 +94,9 @@ global with sharing class FHIRappointmentSTU3 {
 
         @InvocableVariable(required=true)
         global String patientRecordId;
+
+        @InvocableVariable(required=true)
+        global String appointmentProviderId;
     }
 
     global class FHIRapptSTU3ActionResult {

@@ -58,6 +58,12 @@
             <targetReference>Appointments_Done</targetReference>
         </connector>
         <inputParameters>
+            <name>appointmentProviderId</name>
+            <value>
+                <elementReference>varProviderRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>patientRecordId</name>
             <value>
                 <elementReference>ExistingPatientRecordId</elementReference>
@@ -684,8 +690,8 @@ I am setting three VARs for portability.</description>
     <decisions>
         <name>selectedTypesFromApex</name>
         <label>SelectedTYpes</label>
-        <locationX>1052</locationX>
-        <locationY>513</locationY>
+        <locationX>1080</locationX>
+        <locationY>490</locationY>
         <defaultConnector>
             <targetReference>updateEpicSyncField</targetReference>
         </defaultConnector>
@@ -846,7 +852,7 @@ I am setting three VARs for portability.</description>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>GetAppointments</targetReference>
+                <targetReference>Get_Provider_Record_ID</targetReference>
             </connector>
             <label>Appointments</label>
         </rules>
@@ -918,6 +924,30 @@ I am setting three VARs for portability.</description>
         <object>RecordType</object>
         <outputAssignments>
             <assignToReference>varCarePlanRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>This is where you can change what provider gets assigned to the appointments in the demo</description>
+        <name>Get_Provider_Record_ID</name>
+        <label>Get Provider Record ID</label>
+        <locationX>1776</locationX>
+        <locationY>705</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetAppointments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue> JFK Medical Center</stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>varProviderRecordId</assignToReference>
             <field>Id</field>
         </outputAssignments>
     </recordLookups>
@@ -1353,6 +1383,13 @@ I am setting three VARs for portability.</description>
     </variables>
     <variables>
         <name>varCarePlanRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varProviderRecordId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
