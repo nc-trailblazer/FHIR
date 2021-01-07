@@ -25,14 +25,6 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
-        <name>Get_Conditions</name>
-        <label>Get Conditions</label>
-        <locationX>633</locationX>
-        <locationY>1135</locationY>
-        <actionName>FHIRcond</actionName>
-        <actionType>apex</actionType>
-    </actionCalls>
-    <actionCalls>
         <name>Get_token_from_EPIC</name>
         <label>Get Token from EPIC</label>
         <locationX>603</locationX>

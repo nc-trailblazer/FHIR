@@ -25,14 +25,6 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
-        <name>Get_Conditions</name>
-        <label>Get Conditions</label>
-        <locationX>214</locationX>
-        <locationY>836</locationY>
-        <actionName>FHIRcond</actionName>
-        <actionType>apex</actionType>
-    </actionCalls>
-    <actionCalls>
         <name>Get_Conditions_2</name>
         <label>Get Conditions 2</label>
         <locationX>911</locationX>
