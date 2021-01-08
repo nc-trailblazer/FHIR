@@ -53,7 +53,7 @@ Select import from keystore and import the jks file you created above.
 11. Make sure you are in the new app or click into it snd you will now see the Client ID needed for the connection. (We use the Non-Production Client ID)
 ![ClientID Image](/images/clientID.png)
 
-12. Deploy this source to your ORG (You can use this button)  You can also use SFDX or VS Code to if you like. 
+12. Deploy this source to your ORG (You can use this button)  You can also use SFDX or VS Code if you prefer. 
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
