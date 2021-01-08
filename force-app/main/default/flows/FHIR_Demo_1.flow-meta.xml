@@ -50,8 +50,8 @@
     <actionCalls>
         <name>GetAppointments</name>
         <label>GetAppointments</label>
-        <locationX>1188</locationX>
-        <locationY>718</locationY>
+        <locationX>1201</locationX>
+        <locationY>714</locationY>
         <actionName>FHIRappointmentSTU3</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -852,7 +852,7 @@ I am setting three VARs for portability.</description>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Provider_Record_ID</targetReference>
+                <targetReference>Get_Physician_Record_Type_ID</targetReference>
             </connector>
             <label>Appointments</label>
         </rules>
@@ -928,24 +928,47 @@ I am setting three VARs for portability.</description>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
-        <description>This is where you can change what provider gets assigned to the appointments in the demo</description>
-        <name>Get_Provider_Record_ID</name>
-        <label>Get Provider Record ID</label>
-        <locationX>1776</locationX>
-        <locationY>705</locationY>
+        <name>Get_Physician_Record_Type_ID</name>
+        <label>Get Physician Record Type ID</label>
+        <locationX>1690</locationX>
+        <locationY>872</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>GetAppointments</targetReference>
+            <targetReference>Get_Provider_Record_ID</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Name</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue> JFK Medical Center</stringValue>
+                <stringValue>Physician</stringValue>
             </value>
         </filters>
-        <object>Account</object>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>varPhysicianRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>This is where you can change what provider gets assigned to the appointments in the demo</description>
+        <name>Get_Provider_Record_ID</name>
+        <label>Get Provider Record ID</label>
+        <locationX>1881</locationX>
+        <locationY>682</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetAppointments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varPhysicianRecordTypeId</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
         <outputAssignments>
             <assignToReference>varProviderRecordId</assignToReference>
             <field>Id</field>
@@ -1383,6 +1406,13 @@ I am setting three VARs for portability.</description>
     </variables>
     <variables>
         <name>varCarePlanRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varPhysicianRecordTypeId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

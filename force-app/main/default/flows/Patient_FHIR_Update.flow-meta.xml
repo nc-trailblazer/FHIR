@@ -733,13 +733,6 @@
             <name>Patient_Info</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>selectedTypes</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>patientInfo</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>PatientInfoComplete</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
@@ -930,7 +923,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Provider_Record_Id</targetReference>
+                <targetReference>Get_Physician_Record_Type_Id</targetReference>
             </connector>
             <label>Appointments</label>
         </rules>
@@ -1005,23 +998,46 @@
         </outputAssignments>
     </recordLookups>
     <recordLookups>
-        <name>Get_Provider_Record_Id</name>
-        <label>Get Provider Record Id</label>
-        <locationX>1653</locationX>
-        <locationY>657</locationY>
+        <name>Get_Physician_Record_Type_Id</name>
+        <label>Get Physician Record Type Id</label>
+        <locationX>1340</locationX>
+        <locationY>1156</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>GetAppointments</targetReference>
+            <targetReference>Get_Provider_Record_Id</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Name</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue> JFK Medical Center</stringValue>
+                <stringValue>Physician</stringValue>
             </value>
         </filters>
-        <object>Account</object>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>varPhysicianRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Provider_Record_Id</name>
+        <label>Get Provider Record Id</label>
+        <locationX>1220</locationX>
+        <locationY>1160</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetAppointments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varPhysicianRecordTypeId</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
         <outputAssignments>
             <assignToReference>varProviderRecordId</assignToReference>
             <field>Id</field>
@@ -1344,6 +1360,13 @@
     </variables>
     <variables>
         <name>varCarePlanRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varPhysicianRecordTypeId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

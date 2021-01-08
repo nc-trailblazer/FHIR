@@ -547,7 +547,7 @@
         <name>CopyPatientId</name>
         <label>CopyPatientId</label>
         <locationX>360</locationX>
-        <locationY>892</locationY>
+        <locationY>893</locationY>
         <assignmentItems>
             <assignToReference>NewPatientRecordId</assignToReference>
             <operator>Assign</operator>
@@ -887,7 +887,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>GetAppointmentProviderID</targetReference>
+                <targetReference>GetProviderRecordTypeId</targetReference>
             </connector>
             <label>Appointments</label>
         </rules>
@@ -1074,23 +1074,46 @@
         <description>This is where you can change what account the appointment is tied to for the demo.</description>
         <name>GetAppointmentProviderID</name>
         <label>GetAppointmentProviderID</label>
-        <locationX>1790</locationX>
-        <locationY>600</locationY>
+        <locationX>1803</locationX>
+        <locationY>665</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>GetAppointments</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varPhysicianRecordTypeId</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <outputAssignments>
+            <assignToReference>varProviderRecordId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>GetProviderRecordTypeId</name>
+        <label>GetProviderRecordTypeId</label>
+        <locationX>1738</locationX>
+        <locationY>445</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetAppointmentProviderID</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
             <field>Name</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue> JFK Medical Center</stringValue>
+                <stringValue>Physician</stringValue>
             </value>
         </filters>
-        <object>Account</object>
+        <object>RecordType</object>
         <outputAssignments>
-            <assignToReference>varProviderRecordId</assignToReference>
+            <assignToReference>varPhysicianRecordTypeId</assignToReference>
             <field>Id</field>
         </outputAssignments>
     </recordLookups>
@@ -1453,6 +1476,13 @@
     </variables>
     <variables>
         <name>varPersonAccountRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varPhysicianRecordTypeId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
