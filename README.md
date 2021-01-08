@@ -35,7 +35,9 @@ keytool -keystore FHIRDEMO_KEYSTORE_v2.jks -changealias -alias 1 -destalias FHIR
 
 6. Note - Some of these command will ask you to create and or enter a password.  
 
-The above creates a certificate and them a keystore.  You will need the public key for the EPIC site and you will need the keystoore for your Org.  Note that changing the alias is what shows us in the org.  So in this case you will see a cert named fhirdemo_cert_v2 in your Org. 
+The above creates a certificate and them a keystore.  You will need the public key for the EPIC site and you will need the keystoore for your Org.  Note that changing the alias is what shows us in the org.  
+
+Select import from keystore and import the jks file you created above.  
 
 ![Cert Image](/images/cert.png)
 
@@ -59,4 +61,8 @@ The above creates a certificate and them a keystore.  You will need the public k
 
 13. Make sure you see a “Deployment Complete”
 
-14. Open Setup→Custom Metadata Types
+14. Open Setup→Custom Metadata Types and select FHIR_jwt_setting, then Manage FHIR_jwt_setting, then click on FHIR Settings.  
+This is where you can customize everything needed for your jwt token to authorize into your Epic Sandbox you setup above. 
+
+15.  The Client ID from step 11 will be what yoou enter into the ISS and SUB sections. You can leave AUD as is.  JTI can be whatever you want as it is just a session identifier.  Lastly make sure the Cert Name is the name of the cert you created in step 6.
+
