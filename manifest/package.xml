@@ -32,6 +32,7 @@
 		<members>Account.FHIRdata1__c</members>
 		<members>Account.FHIRdata2__c</members>
 		<members>Contact.Epic_Sync__c</members>
+		<members>Contact.NextSync__c</members>
 		<members>EPIC_Access__c.Access_Token__c</members>
 		<members>EPIC_Access__c.ExpireEpoch__c</members>
 		<members>EPIC_Access__c.ExpiresWhen__c</members>
