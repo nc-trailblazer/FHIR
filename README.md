@@ -4,7 +4,7 @@ This is a working demo that leverages the fhir.epic.com API sandbox to demonstra
 
 ## Demo Information
 
-The assets and cose in this demo have been tailored for use with the fhir,epic.com sandbox.  
+The assets and code in this demo have been tailored for use with the fhir.epic.com sandbox.  
 
 Users to use for testing
 
