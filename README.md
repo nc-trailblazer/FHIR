@@ -62,8 +62,10 @@ Navigate back to Certificates and Key Management and select import from keystore
 
 13. Make sure you see a “Deployment Complete”
 
-14. Open Setup→Custom Metadata Types and select FHIR_jwt_setting, then Manage FHIR_jwt_setting, then click on FHIR Settings.  
+14. Open setup and assign the EPIConFHIR Permission Set to your admin user (User giving demo)
+
+15. Open Setup→Custom Metadata Types and select FHIR_jwt_setting, then Manage FHIR_jwt_setting, then click on FHIR Settings.  
 This is where you can customize everything needed for your jwt token to authorize into your Epic Sandbox you setup above. 
 
-15.  The Client ID from step 11 will be what yoou enter into the ISS and SUB sections. You can leave AUD as is.  JTI can be whatever you want as it is just a session identifier.  Lastly make sure the Cert Name is the name of the cert you created in step 6.
+16.  The Client ID from step 11 will be what yoou enter into the ISS and SUB sections. You can leave AUD as is.  JTI can be whatever you want as it is just a session identifier.  Lastly make sure the Cert Name is the name of the cert you created in step 6.
 
