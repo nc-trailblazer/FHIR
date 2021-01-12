@@ -11,7 +11,7 @@ Users to use for testing
 Derrick Lin
 Camila Lopez
 
-The JSON parsing in the code is not production ready.  i have used what will be returned from the API in some cases to shorten the code.
+The JSON parsing in the code is not production ready.  I have used what will be returned from the API in some cases to shorten the code.
 
 ## Installation Instructions
 
@@ -26,7 +26,8 @@ The JSON parsing in the code is not production ready.  i have used what will be 
     ![Image: images/IDP.png](/images/IDP.png)
 
 5. Create a SSL Cert for use on the Epic FHIR Site as well as in your org
-```openssl genrsa -out FHIRDEMO_PRIVATEKEY_v2.pem 2048
+```
+openssl genrsa -out FHIRDEMO_PRIVATEKEY_v2.pem 2048
 openssl req -new -x509 -key FHIRDEMO_PRIVATEKEY_v2.pem -out FHIRDEMO_PUBLICKEY_v2.pem -subj '/CN=CoolFHIRDemo' -days 365
 openssl pkcs12 -export -in FHIRDEMO_PUBLICKEY_v2.pem -inkey FHIRDEMO_PRIVATEKEY_v2.pem -out FHIRDEMO_KEYSTORE_v2.p12
 keytool -importkeystore -srckeystore FHIRDEMO_KEYSTORE_v2.p12 -srcstoretype pkcs12 -destkeystore FHIRDEMO_KEYSTORE_v2.jks -deststoretype JKS
@@ -37,11 +38,11 @@ keytool -keystore FHIRDEMO_KEYSTORE_v2.jks -changealias -alias 1 -destalias FHIR
 
 The above creates a certificate and them a keystore.  You will need the public key for the EPIC site and you will need the keystoore for your Org.  Note that changing the alias is what shows us in the org.  
 
-Select import from keystore and import the jks file you created above.  
+Navigate back to Certificates and Key Management and select import from keystore and import the jks file you created above.  
 
 ![Cert Image](/images/cert.png)
 
-7. Now you need to sign up over at fhir,epic.com (http://epic.com/) for a sandbox account.   
+7. Now you need to sign up over at fhir.epic.com (http://fhir.epic.com/) for a sandbox account.   
 
 8. Once you have your sand box account navigate to Build Apps. 
 
