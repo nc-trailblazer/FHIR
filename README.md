@@ -27,11 +27,11 @@ The JSON parsing in the code is not production ready.  I have used what will be 
 
 5. Create a SSL Cert for use on the Epic FHIR Site as well as in your org
 ```
-openssl genrsa -out FHIRDEMO_PRIVATEKEY_v2.pem 2048
-openssl req -new -x509 -key FHIRDEMO_PRIVATEKEY_v2.pem -out FHIRDEMO_PUBLICKEY_v2.pem -subj '/CN=CoolFHIRDemo' -days 365
-openssl pkcs12 -export -in FHIRDEMO_PUBLICKEY_v2.pem -inkey FHIRDEMO_PRIVATEKEY_v2.pem -out FHIRDEMO_KEYSTORE_v2.p12
-keytool -importkeystore -srckeystore FHIRDEMO_KEYSTORE_v2.p12 -srcstoretype pkcs12 -destkeystore FHIRDEMO_KEYSTORE_v2.jks -deststoretype JKS
-keytool -keystore FHIRDEMO_KEYSTORE_v2.jks -changealias -alias 1 -destalias FHIRDEMO_CERT_v2
+openssl genrsa -out FHIRDEMO_PRIVATEKEY.pem 2048
+openssl req -new -x509 -key FHIRDEMO_PRIVATEKEY.pem -out FHIRDEMO_PUBLICKEY.pem -subj '/CN=CoolFHIRDemo' -days 365
+openssl pkcs12 -export -in FHIRDEMO_PUBLICKEY.pem -inkey FHIRDEMO_PRIVATEKEY.pem -out FHIRDEMO_KEYSTORE.p12
+keytool -importkeystore -srckeystore FHIRDEMO_KEYSTORE.p12 -srcstoretype pkcs12 -destkeystore FHIRDEMO_KEYSTORE.jks -deststoretype JKS
+keytool -keystore FHIRDEMO_KEYSTORE.jks -changealias -alias 1 -destalias FHIRDEMO_CERT
 ```
 
 6. Note - Some of these command will ask you to create and or enter a password.  
