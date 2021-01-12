@@ -73,6 +73,7 @@
 	</types>
 	<types>
 		<members>FHIR_JWT_SETTINGS__mdt-FHIR_jwt_setting Layout</members>
+		<members>PersonAccount-Person Account Layout</members>
 		<name>Layout</name>
 	</types>
 	<types>
