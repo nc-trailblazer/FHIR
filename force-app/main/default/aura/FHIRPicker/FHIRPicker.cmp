@@ -20,7 +20,7 @@
           				</span>
         			</span>
                     <span class="slds-visual-picker__body">
-                        <span class="slds-text-heading_small">Patient Information</span>
+                        <span class="slds-text-heading_x-small">Patient Information</span>
                     </span>
                 </label>
             </div>
@@ -36,12 +36,12 @@
           				</span>
                         <span class="slds-is-not-selected">
             			  <span class="slds-icon_container">
-              				<lightning:icon iconName="standard:skill_entity" size="large" alternativeText="Conditions"/>
+              				<lightning:icon iconName="standard:record_create" size="large" alternativeText="Conditions"/>
             			  </span>
           				</span>
         			</span>
                     <span class="slds-visual-picker__body">
-                        <span class="slds-text-heading_small">Conditions</span>
+                        <span class="slds-text-heading_x-small">Conditions</span>
                     </span>
                 </label>
             </div>
@@ -62,7 +62,7 @@
           				</span>
         			</span>
                     <span class="slds-visual-picker__body">
-                        <span class="slds-text-heading_small">Encounters</span>
+                        <span class="slds-text-heading_x-small">Encounters</span>
                     </span>
                 </label>
             </div>
@@ -83,7 +83,7 @@
           				</span>
         			</span>
                     <span class="slds-visual-picker__body">
-                        <span class="slds-text-heading_small">Care Plan Information</span>
+                        <span class="slds-text-heading_x-small">Care Plan Information</span>
                     </span>
                 </label>
             </div>
@@ -104,7 +104,7 @@
           				</span>
         			</span>
                     <span class="slds-visual-picker__body">
-                        <span class="slds-text-heading_small">Medication Statement</span>
+                        <span class="slds-text-heading_x-small">Medication Statement</span>
                     </span>
                 </label>
             </div>
@@ -125,52 +125,32 @@
           				</span>
         			</span>
                     <span class="slds-visual-picker__body">
-                        <span class="slds-text-heading_small">Appointments</span>
+                        <span class="slds-text-heading_x-small">Appointments</span>
                     </span>
                 </label>
             </div>
-            <!-- Smoking -->
-            <div class="slds-visual-picker slds-visual-picker_small">
-                <input aura:id="Smoking History" type="checkbox" id="visual-picker-90" name="options" value="smoking" onclick="{! c.handleOnClick }" />
+             <!-- Allergy Intolerance -->
+             <div class="slds-visual-picker slds-visual-picker_small">
+                <input aura:id="allergyIntolerance" type="checkbox" id="visual-picker-90" name="options" value="allergyIntolerance" onclick="{! c.handleOnClick }" />
                 <label for="visual-picker-90">
                     <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
                         <span class="slds-is-selected">
             			  <span class="slds-icon_container">
-                				<lightning:icon iconName="action:check" size="large" alternativeText="smoking"/>
+                				<lightning:icon iconName="action:check" size="large" alternativeText="allergyIntolerance"/>
             			  </span>
           				</span>
                         <span class="slds-is-not-selected">
             			  <span class="slds-icon_container">
-              				<lightning:icon iconName="standard:social" size="large" alternativeText="smoking"/>
+              				<lightning:icon iconName="standard:first_non_empty" size="large" alternativeText="allergyIntolerance"/>
             			  </span>
           				</span>
         			</span>
                     <span class="slds-visual-picker__body">
-                        <span class="slds-text-heading_small">Social History - Smoking</span>
+                        <span class="slds-text-heading_x-small">Allergy Intolerance (R4)</span>
                     </span>
                 </label>
             </div>
-            <!-- Labs -->
-            <div class="slds-visual-picker slds-visual-picker_small">
-                <input aura:id="Labs" type="checkbox" id="visual-picker-91" name="options" value="labs" onclick="{! c.handleOnClick }" />
-                <label for="visual-picker-91">
-                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
-                        <span class="slds-is-selected">
-            			  <span class="slds-icon_container">
-                				<lightning:icon iconName="action:check" size="large" alternativeText="labs"/>
-            			  </span>
-          				</span>
-                        <span class="slds-is-not-selected">
-            			  <span class="slds-icon_container">
-              				<lightning:icon iconName="standard:social" size="large" alternativeText="labs"/>
-            			  </span>
-          				</span>
-        			</span>
-                    <span class="slds-visual-picker__body">
-                        <span class="slds-text-heading_small">Social History - Labs</span>
-                    </span>
-                </label>
-            </div>
+            
            </div>
     </fieldset>
 </aura:component>

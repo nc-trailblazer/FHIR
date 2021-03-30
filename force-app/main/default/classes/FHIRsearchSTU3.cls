@@ -74,7 +74,7 @@ global with sharing class FHIRsearchSTU3 {
                     accounttoUpdate.Phone = root.get('entry').get('[0].resource').get('telecom').get('[0].value').getStringValue();
                     accounttoUpdate.Patient_Phone_Number__c = root.get('entry').get('[0].resource').get('telecom').get('[0].value').getStringValue();
                     accounttoUpdate.PersonHomePhone = root.get('entry').get('[0].resource').get('telecom').get('[0].value').getStringValue();
-                    accounttoUpdate.PersonMobilePhone = root.get('entry').get('[0].resource').get('telecom').get('[1].value').getStringValue();
+                    //accounttoUpdate.PersonMobilePhone = root.get('entry').get('[0].resource').get('telecom').get('[1].value').getStringValue();
                     accounttoUpdate.Member_ID__pc = root.get('entry').get('[0].resource').get('identifier').get('[5].value').getStringValue();
                     accounttoUpdate.HealthCloudGA__MedicalRecordNumber__pc = root.get('entry').get('[0].resource').get('identifier').get('[4].value').getStringValue();
                     accounttoUpdate.Member_ID__c = root.get('entry').get('[0].resource').get('identifier').get('[5].value').getStringValue();

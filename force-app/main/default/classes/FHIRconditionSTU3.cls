@@ -70,7 +70,6 @@ global with sharing class FHIRconditionSTU3 {
                 //System.debug(root.toStringPretty());
                 Integer entries = Integer.ValueOf(root.get('total').getStringValue());
                 System.debug('Entries: '+ entries);
-                
                if(entries > 0) {
                    Integer i = 0;
                    String secondLevel = '['+i+'].resource';
